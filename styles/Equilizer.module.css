@@ -1,0 +1,13 @@
+.equilizer-container {
+  display: flex;
+  height: 300px;
+  align-items: flex-end;
+}
+
+.bar {
+  height: 200px;
+  width: 50px;
+  background-color: #1db954;
+  margin: 1rem;
+  border-radius: 3px;
+}

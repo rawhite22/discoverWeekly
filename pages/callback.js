@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router'
 import { getCookies, setCookie, deleteCookie } from 'cookies-next'
 import { useEffect } from 'react'
+import styles from '../styles/Callback.module.css'
+import Equilizer from '../components/Equilizer'
 
 function Callback() {
   const router = useRouter()
@@ -22,8 +24,12 @@ function Callback() {
     setCookie('spotify_token', spotifyAuthObj.access_token, {
       sameSite: 'Lax',
     })
-    router.push('/home')
+    // router.push('/home')
   }, [])
-  return <div>Callback</div>
+  return (
+    <main className={styles['page-container']}>
+      <Equilizer />
+    </main>
+  )
 }
 export default Callback

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Callback.module.css'
 
 export default function Home() {
   const router = useRouter()
@@ -12,8 +12,7 @@ export default function Home() {
     authorizeRedirect +=
       '&scope=' + encodeURIComponent('user-top-read playlist-read-private')
     authorizeRedirect +=
-      '&redirect_uri=' +
-      encodeURIComponent('https://discover-weekly.vercel.app/callback')
+      '&redirect_uri=' + encodeURIComponent('http://localhost:3000/callback')
     router.push(authorizeRedirect)
   }
   return (
