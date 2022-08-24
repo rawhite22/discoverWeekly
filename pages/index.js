@@ -12,7 +12,8 @@ export default function Home() {
     authorizeRedirect +=
       '&scope=' + encodeURIComponent('user-top-read playlist-read-private')
     authorizeRedirect +=
-      '&redirect_uri=' + encodeURIComponent('http://localhost:3000/callback')
+      '&redirect_uri=' +
+      encodeURIComponent('https://discover-weekly.vercel.app/callback')
     router.push(authorizeRedirect)
   }
   return (
