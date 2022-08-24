@@ -2,12 +2,10 @@ import axios from 'axios'
 import { getCookie } from 'cookies-next'
 import Song from '../components/Song'
 
-function Home({ discoverWeekly, tracks }) {
-  console.log(discoverWeekly)
-  console.log(tracks)
+function Home({ tracks }) {
   return (
     <div>
-      <p>{discoverWeekly.description}</p>
+      <p>Discover Weekly</p>
       {tracks.map((track) => (
         <Song key={track.track.id} track={track.track} />
       ))}
@@ -40,7 +38,6 @@ export const getServerSideProps = async ({ req, res }) => {
 
   return {
     props: {
-      discoverWeekly: discoverWeekly[0],
       tracks: getDiscoverWeeklytracks.data.items,
     },
   }
