@@ -24,7 +24,7 @@ function Callback() {
     setCookie('spotify_token', spotifyAuthObj.access_token, {
       sameSite: 'Lax',
     })
-    // router.push('/home')
+    router.push('/home')
   }, [])
   return (
     <main className={styles['page-container']}>
