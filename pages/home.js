@@ -2,13 +2,15 @@ import axios from 'axios'
 import { getCookie } from 'cookies-next'
 import Song from '../components/Song'
 
-function Home({ tracks }) {
+function Home({ tracks, error }) {
   return (
     <div>
       <p>Discover Weekly</p>
-      {tracks.map((track) => (
-        <Song key={track.track.id} track={track.track} />
-      ))}
+      {error && <p>{error}</p>}
+      {tracks &&
+        tracks.map((track) => (
+          <Song key={track.track.id} track={track.track} />
+        ))}
     </div>
   )
 }
@@ -43,9 +45,9 @@ export const getServerSideProps = async ({ req, res }) => {
     }
   } catch (error) {
     return {
-      redirect: {
-        permanent: false,
-        destination: `/`,
+      props: {
+        tracks: null,
+        error: error.message,
       },
     }
   }
