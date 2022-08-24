@@ -1,7 +1,8 @@
 import useAudio from '../hooks/useAudio'
 import Image from 'next/image'
 import styled from 'styled-components'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/pro-solid-svg-icons'
 const SongContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,7 +25,9 @@ function Song({ track }) {
       {track.artists.map((artist) => (
         <p key={artist.id}>{artist.name}</p>
       ))}
-      <p onClick={() => toggle()}>play</p>
+      <p onClick={() => toggle()}>
+        <FontAwesomeIcon icon={faPlay} />
+      </p>
     </SongContainer>
   )
 }
