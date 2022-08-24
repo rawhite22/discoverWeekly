@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import styles from '../styles/Callback.module.css'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const router = useRouter()
